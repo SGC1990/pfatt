@@ -114,7 +114,8 @@ if [ "$EAP_MODE" = "bridge" ] ; then
 
   /usr/bin/logger -st "pfatt" "enabling promiscuous mode..."
   /sbin/ifconfig $EAP_BRIDGE_IF promisc
-  /sbin/ifconfig $ONT_IF promisc
+  # Updated as per https://github.com/MonkWho/pfatt/issues/65
+  /sbin/ifconfig $ONT_IF promisc -vlanhwtag -vlanhwfilter -vlanhwtso
 
   logger -st "pfatt" "waiting for EAP to complete authorization (unimplemented!)..."
   # TODO: detect, wait for EAP
