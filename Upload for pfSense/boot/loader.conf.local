@@ -1,4 +1,0 @@
-if_em_load="YES"
-if_em_name="/boot/modules/if_em.ko"
-if_igb_load="YES"
-if_igb_name="/boot/modules/if_igb.ko"
